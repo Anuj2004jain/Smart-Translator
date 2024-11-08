@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Translator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Smart Translator</h1>
+        </header>
+
+        <!-- Main Translation Boxes -->
+        <div class="translation-boxes">
+
+            <!-- Left Box: Input Box -->
+            <div class="box" id="inputBox">
+                <div class="box-header">
+                    <select id="detectedLang">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="te">Telugu</option>
+                        <option value="kn">Kannada</option>
+                        <option value="ml">Malayalam</option>
+                        <option value="bn">Bengali</option>
+                        <option value="gu">Gujarati</option>
+                        <option value="mr">Marathi</option>
+                        <option value="ne">Nepali</option>
+                        <option value="or">Odia</option>
+                        <option value="pa">Punjabi</option>
+                        <option value="si">Sinhala</option>
+                        <option value="ta">Tamil</option>
+                        <option value="ur">Urdu</option>
+                        <!-- More languages -->
+                    </select>
+                    <button class="icon-button" onclick="startSpeechRecognition()">🎤</button>
+                    <button class="icon-button" onclick="document.getElementById('docInput').click()">📎</button>
+                    <input type="file" id="docInput" accept=".pdf,.docx" onchange="previewDocument(event)" hidden>
+                </div>
+                <textarea id="textInput" placeholder="Enter text, speak, or upload a document..."></textarea>
+            </div>
+
+            <!-- Right Box: Output Box -->
+            <div class="box" id="outputBox">
+                <div class="box-header">
+                    <select id="targetLang">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="te">Telugu</option>
+                        <option value="kn">Kannada</option>
+                        <option value="ml">Malayalam</option>
+                        <option value="bn">Bengali</option>
+                        <option value="gu">Gujarati</option>
+                        <option value="mr">Marathi</option>
+                        <option value="ne">Nepali</option>
+                        <option value="or">Odia</option>
+                        <option value="pa">Punjabi</option>
+                        <option value="si">Sinhala</option>
+                        <option value="ta">Tamil</option>
+                        <option value="ur">Urdu</option>
+                        <!-- More target languages -->
+                    </select>
+                    <button onclick="translateContent()">Translate</button>
+                </div>
+                <textarea id="translatedText" placeholder="Translation will appear here..." readonly></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mammoth.js CDN for DOCX file processing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <!-- PDF.js for PDF file processing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <!-- Your custom JavaScript file -->
+    <script src="/static/script.js"></script>
+
+
+</body>
+</html>
