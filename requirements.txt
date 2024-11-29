@@ -1,7 +1,11 @@
-Flask
+Flask~=3.0.3
 Flask-CORS
 googletrans==4.0.0-rc1
 SpeechRecognition
-PyPDF2
+PyPDF2~=3.0.1
 python-docx
 indic-transliteration
+google_trans_new
+streamlit~=1.40.1
+pandas~=2.2.3
+nltk~=3.9.1

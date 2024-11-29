@@ -2,10 +2,12 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from googletrans import Translator
+# from google_trans_new import google_translator
 import speech_recognition as sr
+
 from docx import Document
 import PyPDF2
-from googletrans import LANGUAGES
+from google_trans_new import LANGUAGES
 print(LANGUAGES)
 
 app = Flask(__name__)
@@ -58,8 +60,6 @@ def translate_doc():
             text += para.text
     translated_text = translate_document(text, target_lang)
     return jsonify({'translated_text': translated_text})
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
